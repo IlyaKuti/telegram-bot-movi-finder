@@ -50,12 +50,19 @@ def send_message (message):
 github link {github}""")
         bot.send_message (message.chat.id, info)
     elif message.text == "about":
-        bot.send_message (message.chat.id, """👋 Hi! I’m Ilya Kooti Arab, the developer of this bot.
+        bot.send_message (message.chat.id, """👋 Hi! I’m Ilya kuti Arab, the developer of this bot.
 I made this bot to help you find movie information quickly and easily.""")
     elif message.text == "<":
         markup = telebot.types.ReplyKeyboardRemove()
         bot.send_message (message.chat.id, "Back to home", reply_markup=markup)
     else:
-        bot.send_message (message.chat.id, "ERROR")
+        bot.send_message (message.chat.id, "I didn't understand your message.")
+
+# @bot.message_handler(commands=["photo"])
+# def send_photo(message):
+#     with open("cr7.png", "rb") as photo:
+#         bot.send_photo(message.chat.id, photo, caption="Here is your photo 📸")
+
+
 
 bot.infinity_polling()

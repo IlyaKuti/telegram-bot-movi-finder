@@ -2,3 +2,6 @@ src/base.py
 .venv
 __pycache__/
 *.pyc
+
+src/cr7.png
+src/mr.white.jpg
