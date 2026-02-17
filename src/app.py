@@ -45,10 +45,14 @@ def send_message (message):
     if message.text == "contact us":
         name = "ilya kuti arab"
         github = "https://github.com/IlyaKuti"
+        github_movie_finder = "this bot repo https://github.com/IlyaKuti/telegram-bot-movi-finder"
         # info = {"my name is":name, "my Github link":github}
         info = (f"""my name is {name}
-github link {github}""")
+github link {github}
+""")
+        
         bot.send_message (message.chat.id, info)
+        bot.send_message (message.chat.id, github_movie_finder)
     elif message.text == "about":
         bot.send_message (message.chat.id, """👋 Hi! I’m Ilya kuti Arab, the developer of this bot.
 I made this bot to help you find movie information quickly and easily.""")
@@ -57,11 +61,6 @@ I made this bot to help you find movie information quickly and easily.""")
         bot.send_message (message.chat.id, "Back to home", reply_markup=markup)
     else:
         bot.send_message (message.chat.id, "I didn't understand your message.")
-
-# @bot.message_handler(commands=["photo"])
-# def send_photo(message):
-#     with open("cr7.png", "rb") as photo:
-#         bot.send_photo(message.chat.id, photo, caption="Here is your photo 📸")
 
 
 
