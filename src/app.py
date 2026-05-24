@@ -34,26 +34,21 @@ def send_movie_info(message):
 @bot.message_handler (commands=["menu"])
 def send_message (message):
     markup = telebot.types.ReplyKeyboardMarkup()
-    about_btn = telebot.types.KeyboardButton ("about")
-    contact_us_btn = telebot.types.KeyboardButton ("contact us")
+    about_btn = telebot.types.KeyboardButton ("About developer")
+    contact_us_btn = telebot.types.KeyboardButton ("github Link")
     back_to_home = telebot.types.KeyboardButton ("<")
     markup.add (about_btn, contact_us_btn, back_to_home)
     bot.send_message (message.chat.id, "select one option", reply_markup=markup)
 
 @bot.message_handler (func=lambda messsage: True)
 def send_message (message):
-    if message.text == "contact us":
+    if message.text == "github Link":
         name = "ilya kuti arab"
-        github = "https://github.com/IlyaKuti"
-        github_movie_finder = "this bot repo https://github.com/IlyaKuti/telegram-bot-movi-finder"
+        github_movie_finder = "this bot repo https://github.com/ilyakuti/telegram-bot-movi-finder"
         # info = {"my name is":name, "my Github link":github}
-        info = (f"""my name is {name}
-github link {github}
-""")
         
-        bot.send_message (message.chat.id, info)
         bot.send_message (message.chat.id, github_movie_finder)
-    elif message.text == "about":
+    elif message.text == "About developer":
         bot.send_message (message.chat.id, """👋 Hi! I’m Ilya kuti Arab, the developer of this bot.
 I made this bot to help you find movie information quickly and easily.""")
     elif message.text == "<":
@@ -65,3 +60,5 @@ I made this bot to help you find movie information quickly and easily.""")
 
 
 bot.infinity_polling()
+
+print ("bot disconected")
